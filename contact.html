@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Raincoats that will keep you dry even if you are pushing the comfort zone" />
+    <title>RainyDays | Home</title>
+    <script src="https://kit.fontawesome.com/cc20864ea7.js" crossorigin="anonymous"></script>
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+
+<body>
+    <header>
+        <a href="index.html"><img src="/images/RainyDays_Logo.png" alt="" class="logo">RainyDays</a>
+        <!-- <a href="index.html" class="logo">RainyDays </a>-->
+        <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
+        <input type="checkbox" id="hamburger-menu" />
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <div class="welcome_contact">
+            <h1>Please, stay in contact with us!</h1>
+        </div>
+
+        <section class="grid-container-contact">
+            <div class="our-data">
+                <div class="our-data-col1">
+                    <p>Phone: </p>
+                    <p>Address: </p>
+                    <p>E-mail: </p>
+
+                </div>
+                <div class="our-data-col2">
+                    <p>90096800</p>
+                    <p>Dronningveien 11, <br />3531 Krokkleiva</p>
+                    <p>rune@fastlane</p>
+                </div>
+                <div class="our-data-map">
+                    <p>This is where our office is located:</p>
+                    <img src="images/our_data_map.png" alt="our_data_map" />
+                </div>
+
+            </div>
+
+            <div class="your-data">
+                <form action="post">
+                    <div class="form-wrapper">
+                        <section>
+                            <label for="name">Your name:</label>
+                            <input type="text" id="name" name="name" />
+                            <label for="address">Your address:</label>
+                            <input type="text" id="address" name="address" />
+                            <label for="email">Your email:</label>
+                            <input type="email" id="email" name="email" />
+                        </section>
+                        <section>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message"></textarea>
+                        </section>
+                    </div>
+                    <input type="submit" value="Send" class="contact_btn" />
+                </form>
+
+            </div>
+        </section>
+        <section class="footer">
+            <p>Copyright &copy;</p>
+        </section>
+
+
+    </main>
+</body>
+
+</html>

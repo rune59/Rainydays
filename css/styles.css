@@ -1,0 +1,287 @@
+/***********************************************/
+/* Typography */
+/***********************************************/
+
+/***********************************************/
+/* General for all pages (body, header, footer and navigation*/
+/***********************************************/
+
+* {
+  box-sizing: border-box;
+}
+
+
+  body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100vh; /* vh stands for "viewpoint-hight, that is as big as the screen is. The purpose is to shuttle the footer to the bottom of the page.  */
+    margin: 0px; /* default is 8 px for the margin. We override that now.  */
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* the purpose with the second "auto" is to place the footer at the bottom of the page */
+    background-color: rgba(247, 247, 238, 0.988);
+  }
+  /* Style the footer */
+  header {
+    display: flex;
+    background-color: #746e6e;
+    color: #ffffff;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 80px;
+  }
+
+  /* Style the footer */
+  .footer {
+    grid-area: footer;
+    background-color: #746e6e;
+    color: #ffffff;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+  }
+
+  .welcome_adventure h1 {
+    padding-left: 50px;
+  }
+
+  /* links in the header */
+  header a {
+    color: #ffffff;
+    padding: 10px;
+  }
+
+  nav {
+    margin-left: 25px;
+    display: none;
+    position: fixed;
+    top: 45px;
+    background: ##1b1b1b;
+    z-index: 1000;
+    right: 0px;
+  }
+
+  nav ul {
+    padding: 0px;
+  }
+
+  nav li {
+    display: block;
+    padding: 20px 30px;
+  }
+
+  #hamburger-menu {
+    display: none;
+  }
+  #hamburger-menu:checked ~ nav {
+    display: block;
+  }
+
+  /***********************************************/
+  /* Buttons */
+  /***********************************************/
+  .contact_btn {
+    background-color: yellow;
+    color: blue;
+    font-size: 1em;
+    text-transform: capitalize;
+    padding: 10px 50px;
+    border-radius: 5px;
+    border-color: blue;
+  }
+  /***********************************************/
+  /* Home page (index.html) */
+  /***********************************************/
+  /* The grid container */
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "welcome_homepage welcome_homepage"
+      "left right";
+    /* "footer footer";*/
+    grid-column-gap: 10px; /*- if you want gap between the columns */
+    padding: 50px;
+  }
+  /* Style the left column */
+  .left {
+    grid-area: left;
+  }
+
+  /* Style the right column */
+  .right {
+    grid-area: right;
+  }
+
+  .left,
+  .right {
+    padding: 10px;
+  }
+
+  .welcome {
+    text-align: center;
+  }
+  .welcome_homepage hr {
+    color: blue;
+    font-weight: bold;
+  }
+
+  .frontpage_images {
+    width: 500px;
+    height: 400px;
+    padding-top: 10px;
+    border-radius: 15%;
+  }
+
+  /***********************************************/
+  /* About page (about.html) */
+  /***********************************************/
+
+  .grid_pic_adventures {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    /*max-width: 1000px;*/
+  }
+  /*
+.grid_pic_adventures {
+  display: grid;
+  grid-template-areas:
+    "text_adventure pic_adventure pic_adventure pic_adventure"
+    "text_adventure pic_adventure pic_adventure pic_adventure";
+  /* grid-column-gap: 10px; - if you want gap between the columns */
+}
+*/ .grid_pic_adventures img {
+  grid-column: -1/1;
+  width: 100%;
+}
+.pic_adventure img {
+  border-radius: 50%;
+  width: 350px;
+  height: 230px;
+  padding-bottom: 10px;
+}
+.pic_adventure h2 {
+  text-align: center;
+  color: blue;
+}
+
+/***********************************************/
+/*Contact page (contact.html) */
+/***********************************************/
+input,
+select,
+textarea {
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  margin: 10px 10px 10px 0px;
+  padding: 10px;
+}
+textarea {
+  height: 65%;
+  min-height: 100px;
+}
+.contact {
+  max-width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.form-wrapper {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+}
+.form-wrapper > * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.grid-container-contact {
+  grid-template-areas: "our-data your-data ";
+}
+
+/***********************************************/
+/* Product page (products.html) */
+/***********************************************/
+#app {
+  height: 100vh;
+}
+#app {
+  height: 100vh;
+
+  /* grid container settings */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+#app > header {
+  grid-area: header;
+}
+
+#app > main {
+  grid-area: main;
+  overflow: auto;
+  padding: 15px 5px 10px 5px;
+}
+
+#app > footer {
+  grid-area: footer;
+}
+#app {
+  /* etc. */
+  grid-template-rows: auto 1fr auto;
+  /* etc. */
+}
+
+/***********************************************/
+/* Media - adjustments for different plattforms */
+/***********************************************/
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-areas:
+      "welcome_homepage welcome_homepage "
+      "left left "
+      "right right"
+      "footer footer";
+  }
+}
+
+/* 0 - 400px width */
+@media (max-width: 400px) {
+  .product-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 400 - 600px width */
+
+@media (min-width: 600px) {
+  .featured {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  header {
+    justify-content: start;
+  }
+
+  nav {
+    display: block;
+    position: static;
+  }
+
+  nav li {
+    display: inline-block;
+    padding: 0px;
+  }
+
+  header label {
+    display: none;
+  }
+}
